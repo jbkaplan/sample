@@ -1,0 +1,27 @@
+<div class="form">
+<article>
+  <h1>Register</h1>
+
+      <% if @errors %>
+        <div class="errors-wrapper">
+            <span>Your entry could not be saved:</span>
+            <ul class="errors">
+              <% @errors.each do |error| %>
+                <p><%= error %></p>
+              <% end %>
+            </ul>
+        </div>
+      <% end %>
+
+    <form action="/register" method="post">
+      <!-- <label>Email:</label> -->
+      <input type="text" class="field" name="user[email]" placeholder="Email"><br><br>
+      <!-- <label>Username:</label> -->
+      <input type="text" class="field" name="user[username]" placeholder="Username"><br><br>
+      <!-- <label>Password:</label> -->
+      <input type="password" class="field" name="user[password]" placeholder="Password"><br><br>
+      <input class="button" type="submit" value="Register">
+    </form>
+
+</article>
+</div>

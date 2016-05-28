@@ -1,0 +1,6 @@
+<% albums.each do | album_item | %>
+  <div data-album-id='<%= album_item["id"]%>' name="<%= album_item['id']%>" class='album_cover cover' style="background-image: url(<%=album_item['images'][0]['url']%>)"></div>
+<% end %>
+
+
+

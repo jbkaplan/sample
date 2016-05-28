@@ -1,0 +1,21 @@
+<div class="form">
+  <article class="post-container">
+    <h1>Login</h1>
+
+    <% if @error %>
+      <p>Invalid Credantials</p>
+    <% end %>
+
+    <form action="/login" method="post">
+      <!-- <label>Username:</label> -->
+      <input type="text" class="field" name="username" placeholder="Username">
+      <br><br>
+      <!-- <label>Password:</label> -->
+      <input type="password" class="field" name="password" placeholder="Password">
+      <br>
+      <br>
+      <input class="button" type="submit" value="Login">
+    </form>
+  </article>
+</div>
+
