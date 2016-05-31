@@ -24,13 +24,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user.albums.find_or_create_by(spotify_id: params[:id], name: params[:name])
-    if request.xhr?
-       render json: { userName: @user.username,
-                      userPhase: @user.email 
-                    }
-    else
-      @user
-    end
   end
 
   def edit
@@ -46,12 +39,7 @@ class UsersController < ApplicationController
       render "new"
     end
   end
-
-  def messages
-
-  end
-
-
+  
   def update
    @user = User.find(params[:id])
     if @user.update(edit_user_params)
