@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'search' => 'welcome#search', as: 'search'
 
   # You can have the root of your site routed with "root"
-  # root 'index#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

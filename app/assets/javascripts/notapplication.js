@@ -150,6 +150,7 @@ $(document).ready(function() {
     event.preventDefault();
       $('#query').val('');
       $('.form').show();
+      $('#query').focus();
       $('#search-again').fadeOut(500);
   });
 
