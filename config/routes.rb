@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :welcome
-  resources :users,except: [:index, :delete]
+  resources :users, except: :delete
 
   root   'welcome#index'
 

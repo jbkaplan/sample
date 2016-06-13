@@ -17,13 +17,23 @@
 class UsersController < ApplicationController
   before_filter :skip_password_attribute, only: :update
 
+  def index
+    @user = User.find(session[:user_id])
+    @user.albums.find_or_create_by(spotify_id: params[:id], name: params[:name])
+    if request.xhr?
+      status 200
+    else
+      redirect_to root_path
+    end
+  end
+
   def new
     @user = User.new
   end
 
   def show
     @user = User.find(params[:id])
-    @user.albums.find_or_create_by(spotify_id: params[:id], name: params[:name])
+    
   end
 
   def edit
