@@ -24,7 +24,6 @@ $(document).ready(function() {
         artistObject = response.artists.items[0];
         $('.form').hide();
         $('#search-again').fadeIn(500);
-        // $('#search-again').show('puff', {percent: 0}, 2000);
         $('#artist-bio').append(`<img class="artist_pic" src="${artistObject.images[0].url}"> <h1 class="artist_name">${artistObject.name}</h1>`);
         response.albums.items.forEach(function(album_object) {
           $('#results').append(`
@@ -112,14 +111,6 @@ $(document).ready(function() {
       searchAlbums($('#query').val());
   });
 
-  // old
-
-  // document.getElementById('search-form').addEventListener('submit', function (e) {
-  //     $('#artist-bio').html('');
-  //     $('#results').html('');
-  //     e.preventDefault();
-  //     searchAlbums(document.getElementById('query').value);
-  // }, false);
 
   $('#sidebar').on("submit", "#save_form", function(event){
     event.preventDefault();
@@ -130,21 +121,6 @@ $(document).ready(function() {
         data: data
     });
   });
-
-  // $('.container').on("click", "#search-again", function(event){
-  //   event.preventDefault();
-  //   var request = $.ajax({
-  //       url: '/search',
-  //       method: "GET"
-  //   });
-
-  //   request.done(function () {
-  //     $('#query').val('');
-  //     $('.form').show();
-  //     $('#search-again').fadeOut(500);
-  //   });
-
-  // });  
 
   $('.container').on("click", "#search-again", function(event){
     event.preventDefault();

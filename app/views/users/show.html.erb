@@ -1,6 +1,6 @@
 <div class="container" id="albums_list">
   <div class="form">
-    <h1>Hello <%=@user.username%></h1>
+    <h1>Hello <%= @user.username %></h1>
     <h2 class="user_albums">My Albums</h2>
       <ul>
       <% @user.albums.each do |album| %>

@@ -1,0 +1,26 @@
+<div class="form">
+  <article class="post-container">
+    <h1>Login</h1>
+    <%= form_tag(url: login_path, role: 'form') do %>
+      <% if flash.any? %>
+        <% flash.each do |message_type, message| %>
+          <div class="alert"><%= message %></div>
+        <% end %>
+      <% end %>
+  
+    <p>
+      <%= label_tag :username %>
+      <%= text_field_tag :username, nil, class: 'field' %>
+    </p>
+    <p>
+      <%= label_tag :password %>
+      <%= password_field_tag :password, nil, class: 'field' %>
+    </p>
+    <p>
+      <%= submit_tag 'Login', class: 'button' %>
+    </p>
+    <% end %>
+  </article>
+</div>
+
+

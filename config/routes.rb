@@ -3,8 +3,16 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :welcome
+  resources :users,except: [:index, :delete]
 
-  get 'search' => 'welcome#search', as: 'search'
+  root   'welcome#index'
+
+  get    'search'    => 'welcome#search', as: 'search'
+  get    '/register' => 'users#new'
+  get    '/login'    => 'sessions#new'
+  post   '/login'    => 'sessions#create'
+  delete '/logout'   => 'sessions#delete'
+
 
   # You can have the root of your site routed with "root"
   # root 'index#index'
